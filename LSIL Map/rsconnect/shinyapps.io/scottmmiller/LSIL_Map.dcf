@@ -1,0 +1,12 @@
+name: LSIL_Map
+title: LSIL_Map
+username:
+account: scottmmiller
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2538275
+bundleId: 3354704
+url: https://scottmmiller.shinyapps.io/LSIL_Map/
+when: 1593969465.94054
+asMultiple: FALSE
+asStatic: FALSE

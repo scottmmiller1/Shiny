@@ -1,0 +1,12 @@
+name: shinymap
+title:
+username:
+account: scottmmiller
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2535926
+bundleId: 3354883
+url: https://scottmmiller.shinyapps.io/shinymap/
+when: 1593973184.89606
+asMultiple: FALSE
+asStatic: FALSE
