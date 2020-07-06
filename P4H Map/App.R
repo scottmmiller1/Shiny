@@ -25,7 +25,7 @@ server <- function(input, output, session) {
                                      "Year 1 average pre-test score: ", p4h$Pre1, "<br>",
                                      "Year 1 average post-test score: ", p4h$Post1, "<br>", ifelse(p4h$Stage == 2, "<br>", ""),
                                      ifelse(p4h$Stage == 2, "Year 2 average pre-test score: ", ""), ifelse(p4h$Stage == 2, p4h$Pre2, ""), ifelse(p4h$Stage == 2, "<br>", ""), 
-                                     ifelse(p4h$Stage == 2, "Year 2 average pre-test score: ", ""), ifelse(p4h$Stage == 2, p4h$Post2, ""))) %>%
+                                     ifelse(p4h$Stage == 2, "Year 2 average post-test score: ", ""), ifelse(p4h$Stage == 2, p4h$Post2, ""))) %>%
       addLegend("topleft", colors= c("royalblue", "firebrick", "forestgreen", "goldenrod"), labels=c("Year 1", "Year 2", "Year 3", "Graduated"), title="Training Stage") %>%
       setView(lat = 18.81228, lng = -72.94282, zoom = 9)
   })
