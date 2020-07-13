@@ -16,6 +16,9 @@ ui <- fluidPage(
     sidebarPanel(
       sliderInput('gap', 'Select Minimum Pre-Post Test Score Gap to Display:', 20, 70, 30, step = 1),
       selectInput('org', "Filter by Parent Organization:", choices = c("All", unique(p4h$Org)), selected = "All", multiple = F),
+      selectInput('trainer', "Filter by Year 1 Trainers:",
+                  choices = c("All", unique(p4h$tr1), unique(p4h$tr2), unique(p4h$tr3), unique(p4h$tr4), unique(p4h$tr5), unique(p4h$tr6), unique(p4h$tr7)), 
+                  selected = "All", multiple = F),
       width = 3
     ),
     mainPanel(
@@ -33,10 +36,17 @@ server <- function(input, output, session) {
     } else {
       filter(p4h, Org == input$org)
     }
+    p4h <- if(input$trainer == "All"){
+      p4h
+    } else {
+      filter(p4h, tr1 == input$trainer | tr2 == input$trainer | tr3 == input$trainer | tr4 == input$trainer | 
+                  tr5 == input$trainer | tr6 == input$trainer | tr7 == input$trainer)
+    }
     p4h <- filter(p4h, Gap1 >= input$gap)
     
     validate(
-      need(nrow(p4h) > 0, 'There are no data points that meet this criteria. Try expanding the minimum pre-post test score gap!')
+      need(nrow(p4h) > 0, 'There are no data points that meet this criteria. Try expanding the minimum pre-post test score gap!'),
+      need(input$trainer, 'Please select at least one trainer.')
     )
     
     p4h %>%

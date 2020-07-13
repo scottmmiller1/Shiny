@@ -5,8 +5,8 @@ account: scottmmiller
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2535926
-bundleId: 3387232
+bundleId: 3387381
 url: https://scottmmiller.shinyapps.io/shinymap/
-when: 1594665087.04521
+when: 1594667240.10197
 asMultiple: FALSE
 asStatic: FALSE
